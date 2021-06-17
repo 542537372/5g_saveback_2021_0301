@@ -1,2 +1,14 @@
 # 5g_saveback_2021_0301
-This is a saveback version of 5gnr,version from 2021.03.20
+这是一份备份文件，用于保存20210301版本的5g代码。
+
+
+
+
+注意：
+
+1：基本编译流程，请参照秀哥之前提供的OAI环境搭建_2021_0617.docx文档。
+
+2：由于国内环境等原因，请用这个build_help替换cmake_targets/tools中的文件。
+该文件用于控制编译项目所需的几个组件，通过替换可以修改其下载路径和编译镜像源。
+
+3：请把提供的工具protobuf-c.zip，protobuf-cpp-3.3.0.tar.gz两个下载后解压，放置在ubuntu的/tmp目录下。请把压缩包和解压后的文件夹都放进去。
