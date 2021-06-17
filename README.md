@@ -12,3 +12,11 @@
 该文件用于控制编译项目所需的几个组件，通过替换可以修改其下载路径和编译镜像源。
 
 3：请把提供的工具protobuf-c.zip，protobuf-cpp-3.3.0.tar.gz两个下载后解压，放置在ubuntu的/tmp目录下。请把压缩包和解压后的文件夹都放进去。
+
+4：如果遇到nr-softmodem编译不过的情况，是因为在编译时会下载一个新版本的NGAP_R15,这个模块可能会编译不过，因为其文件没有定义一个指针asn_PER_memb_NGAP_OCTET_STRING_CONTAINING_PDUSessionResourceReleaseResponseTransfer__constr_15。已经上传了旧版本的代码，请把对应结构体定义加到文件NGAP_ProtocolExtensionField.c中:
+
+static asn_per_constraints_t asn_PER_memb_NGAP_OCTET_STRING_CONTAINING_PDUSessionResourceReleaseResponseTransfer__constr_15 CC_NOTUSED = {
+	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	0, 0	/* No PER value map */
+};
